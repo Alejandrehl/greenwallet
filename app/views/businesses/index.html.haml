@@ -15,7 +15,7 @@
       %tr
         %td= business.name
         %td= business.description
-        %td= business.user
+        %td= business.user.email
         %td= link_to 'Show', business
         %td= link_to 'Edit', edit_business_path(business)
         %td= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' }
