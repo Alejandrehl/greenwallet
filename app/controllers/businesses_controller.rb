@@ -10,6 +10,7 @@ class BusinessesController < ApplicationController
   # GET /businesses/1
   # GET /businesses/1.json
   def show
+    @business = Business.find(params[:id])
   end
 
   # GET /businesses/new
@@ -24,7 +25,11 @@ class BusinessesController < ApplicationController
   # POST /businesses
   # POST /businesses.json
   def create
-    @business = Business.new(business_params)
+    @business = Business.new
+    @business.name = business_params[:name]
+    @business.description = business_params[:description]
+    @business.user_id = current_user.id
+    @business.save
 
     respond_to do |format|
       if @business.save
