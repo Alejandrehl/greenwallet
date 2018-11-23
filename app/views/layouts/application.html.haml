@@ -15,14 +15,11 @@
       #navbarText.collapse.navbar-collapse
         - if user_signed_in?
           %ul.navbar-nav.mr-auto
-            %li.nav-item.active
-              %a.nav-link{:href => "#"}
-                Home
-                %span.sr-only (current)
             %li.nav-item
-              %a.nav-link{:href => "#"} Features
+              %a.nav-link{:href => "/"}
+                Inicio
             %li.nav-item
-              %a.nav-link{:href => "#"} Pricing
+              %a.nav-link{:href => "/businesses"} Mis negocios
           %span.navbar-text
             = link_to("Salir", destroy_user_session_path, method: :delete)
     %p.notice= notice
