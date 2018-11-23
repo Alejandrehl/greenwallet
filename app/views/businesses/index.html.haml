@@ -1,6 +1,6 @@
-%h1 Listing businesses
+%h1.text-center Mis negocios
 
-%table{:id => "businessTable"}
+%table.table.table-striped{:id => "businessTable"}
   %thead
     %tr
       %th Name
@@ -16,10 +16,10 @@
         %td= business.name
         %td= business.description
         %td= business.user.email
-        %td= link_to 'Show', business
-        %td= link_to 'Edit', edit_business_path(business)
-        %td= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to (fa_icon "eye") ,business, class: "btn btn-primary btn-block"
+        %td= link_to (fa_icon "edit"), edit_business_path(business), class: "btn btn-primary btn-block"
+        %td= link_to (fa_icon "trash"), business, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-block"
 
 %br
 
-= link_to 'New Business', new_business_path
+= link_to (fa_icon "plus-circle"), new_business_path, class: "btn btn-primary float-right"

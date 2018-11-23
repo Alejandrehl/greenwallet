@@ -1,3 +1,3 @@
-# $(document).ready ->
-#   $('#businessTable').DataTable()
-#   return
+$(document).ready ->
+  $('#businessTable').DataTable()
+  return
